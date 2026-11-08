@@ -1,0 +1,1001 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --background: #080f1f;
+    --panel: #101e34;
+    --panel-light: #172b47;
+    --border: #2c4565;
+    --white: #f7f9ff;
+    --muted: #b2c4db;
+    --gold: #f3c878;
+    --blue: #5797ff;
+    --green: #42d5a1;
+    --red: #ff7185;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Manrope', Arial, sans-serif;
+    background: var(--background);
+    color: var(--white);
+    line-height: 1.8;
+}
+
+button,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    filter: brightness(1.15);
+}
+
+button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.header {
+    background: #0f1c31;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-icon {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 16px;
+
+    background: linear-gradient(
+        135deg,
+        #f8db9e,
+        #dba650
+    );
+
+    color: #1c2638;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.brand h1 {
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+
+.brand p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+.header-right span {
+    background: #273d5d;
+    border-radius: 25px;
+    padding: 8px 15px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.app {
+    max-width: 1750px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 325px;
+
+    gap: 25px;
+    padding: 25px;
+    align-items: start;
+}
+
+.main {
+    min-width: 0;
+}
+
+.lesson-header {
+    background: linear-gradient(
+        135deg,
+        #173b61,
+        #11213b 75%
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    padding: 33px;
+    margin-bottom: 20px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--gold);
+}
+
+.lesson-header h2 {
+    font-size: clamp(25px, 3.2vw, 42px);
+    line-height: 1.28;
+    margin: 17px 0;
+}
+
+.lesson-header p {
+    font-size: 16px;
+    color: #c8d8ec;
+}
+
+.progress {
+    width: 100%;
+    height: 9px;
+
+    background: #071525;
+    border-radius: 50px;
+
+    margin-top: 25px;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+    width: 12.5%;
+
+    background: linear-gradient(
+        90deg,
+        #4580ff,
+        #42dfb1
+    );
+
+    border-radius: 50px;
+    transition: width 0.3s;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 10px;
+
+    color: #bed5f2;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.content {
+    min-height: 550px;
+}
+
+.card {
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+    border-radius: 19px;
+
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: clamp(22px, 2.4vw, 30px);
+    line-height: 1.4;
+
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.card h4 {
+    font-size: 21px;
+    color: #a1c8ff;
+    margin: 25px 0 12px;
+}
+
+.card p {
+    font-size: 18px;
+    line-height: 2;
+    margin-bottom: 18px;
+    color: #e3ecf9;
+}
+
+.card ul,
+.card ol {
+    padding-left: 26px;
+    font-size: 18px;
+}
+
+.card li {
+    margin-bottom: 12px;
+}
+
+.card strong {
+    color: #ffffff;
+}
+
+.stage-time {
+    display: inline-block;
+
+    background: #203d61;
+    color: #fbd491;
+
+    padding: 7px 14px;
+    border-radius: 50px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    margin-bottom: 18px;
+}
+
+.picture {
+    margin: 22px 0;
+    padding: 13px;
+
+    background: #0b192b;
+    border: 1px solid var(--border);
+
+    border-radius: 17px;
+}
+
+.picture img {
+    display: block;
+
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+.picture figcaption {
+    color: var(--muted);
+    font-size: 12px;
+
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.image-error {
+    padding: 35px;
+    background: #1e3550;
+    text-align: center;
+    border-radius: 12px;
+    color: white;
+}
+
+.highlight {
+    border-left: 5px solid var(--gold);
+    border-radius: 12px;
+
+    background: #203451;
+    padding: 22px;
+
+    margin: 20px 0;
+
+    font-size: 18px;
+    color: white;
+    line-height: 1.9;
+}
+
+.note {
+    background: #173d37;
+    border-left: 4px solid var(--green);
+
+    padding: 20px;
+    border-radius: 12px;
+
+    margin: 20px 0;
+
+    color: #dcfff4;
+    font-size: 17px;
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    margin: 25px 0;
+}
+
+.timeline-item {
+    background: #183253;
+    border: 1px solid #365a80;
+    border-radius: 13px;
+
+    padding: 20px 12px;
+    text-align: center;
+}
+
+.timeline-item .emoji {
+    font-size: 32px;
+    display: block;
+}
+
+.timeline-item strong {
+    display: block;
+    font-size: 19px;
+    color: var(--gold);
+    margin: 8px 0;
+}
+
+.timeline-item small {
+    font-size: 12px;
+    color: #d2e2f8;
+}
+
+.comparison {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.comparison th {
+    background: #29476c;
+    color: white;
+}
+
+.comparison td,
+.comparison th {
+    border: 1px solid #49617b;
+    text-align: left;
+    padding: 15px;
+    font-size: 15px;
+    vertical-align: top;
+}
+
+.comparison td {
+    background: #162940;
+    color: #e1e9f4;
+}
+
+.notebook {
+    background: #fff9eb;
+    border-radius: 16px;
+    padding: 35px;
+
+    border-left: 7px solid #d4a24c;
+
+    color: #243143;
+}
+
+.notebook h3,
+.notebook h4 {
+    color: #78521a;
+}
+
+.notebook h4 {
+    margin: 25px 0 10px;
+    font-size: 21px;
+}
+
+.notebook p,
+.notebook li {
+    color: #233147;
+    font-size: 18px;
+    line-height: 2.15;
+}
+
+.notebook p {
+    margin-bottom: 16px;
+}
+
+.notebook-title {
+    text-align: center;
+    font-size: 21px;
+    font-weight: 800;
+    color: #463214;
+
+    margin-bottom: 20px;
+}
+
+.video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    background: #000;
+    margin: 20px 0;
+}
+
+.video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-link {
+    display: inline-block;
+    background: #db3d4d;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 18px;
+    border-radius: 11px;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    margin: 10px 0;
+}
+
+.question {
+    background: #152940;
+    border: 1px solid #304d6b;
+    border-radius: 14px;
+
+    padding: 22px;
+    margin-bottom: 17px;
+}
+
+.question-number {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.question-title {
+    font-size: 19px;
+    color: white;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.answer-btn {
+    background: #2b5fa8;
+    color: white;
+
+    border: none;
+    border-radius: 9px;
+
+    padding: 11px 17px;
+    margin-top: 14px;
+
+    font-weight: 800;
+}
+
+.answer {
+    display: none;
+    background: #173c36;
+
+    border-left: 4px solid var(--green);
+    border-radius: 9px;
+
+    padding: 17px;
+    margin-top: 15px;
+
+    color: #e0fff5;
+    font-size: 16px;
+}
+
+.answer.visible {
+    display: block;
+}
+
+.writing-task {
+    background: #1b304e;
+    border-left: 4px solid #72aaff;
+
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+
+    font-size: 17px;
+}
+
+.student-picker {
+    background: #1b304e;
+    border-radius: 13px;
+
+    padding: 20px;
+    margin-top: 23px;
+}
+
+.student-picker textarea {
+    width: 100%;
+    min-height: 95px;
+    resize: vertical;
+
+    background: #0d1c30;
+    border: 1px solid #4b6586;
+    border-radius: 10px;
+
+    padding: 12px;
+    color: white;
+    font-size: 15px;
+
+    margin-top: 12px;
+}
+
+.student-picker button {
+    background: var(--gold);
+    color: #203047;
+
+    border: none;
+    border-radius: 9px;
+
+    padding: 12px 20px;
+    font-weight: 800;
+
+    margin-top: 12px;
+}
+
+#studentResult {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--gold);
+    margin-top: 15px;
+}
+
+.teams {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.team {
+    background: #152940;
+
+    border: 1px solid #35516e;
+    border-radius: 15px;
+
+    padding: 18px;
+}
+
+.team:nth-child(1) {
+    border-top: 5px solid #619cff;
+}
+
+.team:nth-child(2) {
+    border-top: 5px solid #f8c16c;
+}
+
+.team:nth-child(3) {
+    border-top: 5px solid #4de4ae;
+}
+
+.team h4 {
+    font-size: 21px;
+    color: var(--gold);
+    margin: 0 0 13px;
+}
+
+.team p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.statement {
+    background: #0f1e31;
+    border: 1px solid #29415d;
+    border-radius: 10px;
+
+    padding: 13px;
+    margin-bottom: 11px;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.statement-answer {
+    display: none;
+
+    color: #a9f5d5;
+    background: #193e36;
+
+    border-radius: 7px;
+    padding: 10px;
+    margin-top: 10px;
+
+    font-size: 14px;
+}
+
+.statement-answer.visible {
+    display: block;
+}
+
+.reveal {
+    border: none;
+    border-radius: 8px;
+
+    background: #345b87;
+    color: white;
+
+    padding: 9px 12px;
+    margin-top: 11px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.team-score-buttons {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+}
+
+.team-score-buttons button {
+    border: none;
+    border-radius: 8px;
+
+    background: #24775b;
+    color: white;
+
+    padding: 10px;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.team-score-buttons button.minus {
+    background: #804351;
+}
+
+.team-score-buttons button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+.winner-card {
+    background: linear-gradient(
+        135deg,
+        #163e3e,
+        #172942
+    );
+
+    border: 1px solid #398f78;
+    border-radius: 18px;
+
+    padding: 30px;
+    text-align: center;
+    margin: 22px 0;
+}
+
+.winner-card h3 {
+    color: var(--gold);
+}
+
+.winner-name {
+    font-size: 29px;
+    font-weight: 800;
+
+    color: var(--green);
+    margin-top: 15px;
+}
+
+.final-scores {
+    display: grid;
+    gap: 10px;
+
+    max-width: 450px;
+    margin: 20px auto;
+}
+
+.final-score {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 14px 20px;
+
+    background: #1c344d;
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+.final-score strong {
+    color: var(--gold);
+}
+
+.sidebar {
+    position: sticky;
+    top: 15px;
+
+    max-height: calc(100vh - 30px);
+    overflow-y: auto;
+
+    background: #101e33;
+    border: 1px solid var(--border);
+    border-radius: 19px;
+
+    padding: 19px;
+}
+
+.side-title {
+    color: var(--gold);
+    font-size: 16px;
+    font-weight: 800;
+
+    margin-bottom: 18px;
+}
+
+.side-section {
+    padding-bottom: 19px;
+    margin-bottom: 19px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.side-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.side-label {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 800;
+
+    margin-bottom: 13px;
+}
+
+.timer {
+    text-align: center;
+    color: var(--gold);
+
+    font-size: 43px;
+    font-weight: 800;
+
+    line-height: 1.3;
+}
+
+.time-left {
+    text-align: center;
+    color: #b7c9e2;
+
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.timer-controls button {
+    flex: 1;
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+    padding: 10px 5px;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.btn-green {
+    background: #198260;
+}
+
+.btn-gray {
+    background: #39506d;
+}
+
+.btn-red {
+    background: #9c3e51;
+}
+
+.stage-button {
+    width: 100%;
+
+    border: 1px solid #2d4869;
+    border-radius: 10px;
+
+    background: #1b304d;
+    color: #e3edff;
+
+    padding: 12px;
+
+    text-align: left;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+.stage-button.active {
+    background: #2f5fa6;
+    border-color: #7faaff;
+}
+
+.stage-button small {
+    white-space: nowrap;
+    color: #c9d9ee;
+}
+
+.score-row {
+    display: flex;
+    justify-content: space-between;
+
+    background: #1a304d;
+    border-radius: 10px;
+
+    padding: 12px;
+    margin-bottom: 8px;
+
+    font-size: 14px;
+}
+
+.score-row strong {
+    color: var(--gold);
+}
+
+.reset-scores {
+    width: 100%;
+    background: transparent;
+
+    border: 1px solid #8e5260;
+    color: #ffbfc9;
+
+    padding: 10px;
+    border-radius: 9px;
+
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+.nav-controls {
+    display: grid;
+    gap: 9px;
+}
+
+.nav-controls button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.previous {
+    background: #2e4766;
+    color: white;
+}
+
+.next {
+    background: var(--gold);
+    color: #202c3c;
+}
+
+.footer {
+    padding: 23px;
+    color: #90abc9;
+    font-size: 13px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer strong {
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+@media (max-width: 1120px) {
+    .teams {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 850px) {
+    .app {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    .sidebar {
+        position: static;
+        max-height: none;
+    }
+
+    .header {
+        padding: 15px;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .brand h1 {
+        font-size: 17px;
+    }
+
+    .lesson-header,
+    .card {
+        padding: 20px;
+    }
+
+    .timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .notebook {
+        padding: 21px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+    .notebook p {
+        font-size: 17px;
+    }
+
+    .comparison td,
+    .comparison th {
+        padding: 9px;
+        font-size: 13px;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .header,
+    .sidebar,
+    .footer {
+        display: none;
+    }
+
+    .app {
+        display: block;
+    }
+
+    .card,
+    .notebook {
+        background: white;
+        color: black;
+        border: none;
+    }
+}
